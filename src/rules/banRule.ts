@@ -167,14 +167,14 @@ class BanFunctionWalker extends Lint.AbstractWalker<Options> {
     }
 
     private checkForObjectMethodBan(expression: ts.PropertyAccessExpression) {
-        for (const ban of this.options.methods) {
+        method_loop: for (const ban of this.options.methods) {
             if (expression.name.text !== ban.name) {
                 continue;
             }
             let current = expression.expression;
             for (let i = ban.object.length - 1; i > 0; --i) {
                 if (!isPropertyAccessExpression(current) || current.name.text !== ban.object[i]) {
-                    continue;
+                    continue method_loop;
                 }
                 current = current.expression;
             }
