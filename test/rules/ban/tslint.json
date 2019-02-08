@@ -10,7 +10,9 @@
       {"name": ["_", "map"]},
       ["_", "filter", "Use the native JavaScript 'myArray.filter' instead."],
       {"name": ["*", "forEach"], "message": "Use a regular for loop instead."},
-      {"name": ["chai", "assert", "equal"], "message": "Use 'strictEqual' instead."}
+      {"name": ["chai", "assert", "equal"], "message": "Use 'strictEqual' instead."},
+      {"name": ["test", "only", "each"]},
+      {"name": ["*", "only", "each"]}
     ]
   }
 }
